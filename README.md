@@ -9,4 +9,4 @@ Vi har opstillet en player som kan bevæge. Vi bruger `void Update()`til at fang
 Vi har fundet en sprite pack, som vi har brugt til at lave animationer til vores player. Vi har fundet et tileset, som vi har brugt til at lave et tilemap, så vi har en start.
 
 Som en øvelse har vi lavet et diagram over vores tidligere spil ”Cryptic Conquest":
-<div style="text-align:center"><img src="Opgave%202.1-1.jpg" width="75%"></div>
+<img src="Opgave%202.1-1.jpg" width="75%">
