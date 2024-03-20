@@ -5,19 +5,31 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] private int speed = 5;
-    private Vector2 movement;
-    private Rigidbody2D rb;
+
+    public float moveSpeed = 5f;
+
+    public Rigidbody2D rb;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
     }
-    private void OnMove(InputValue value)
+
+    
+    Vector2 movement;
+    void Update() // Vi bruger void update til player inputs
     {
-        movement = value.Get<Vector2>();
+
+        movement.x = Input.GetAxisRaw("Horizontal");
+        movement.y = Input.GetAxisRaw("Vertical");
     }
-    private void FixedUpdate()
+
+    void FixedUpdate() // Vi bruger fixed update til player movement da en normal update varierer pr. frametime, og FixedUpdate ikke gør
     {
-        rb.MovePosition(rb.position + movement * speed * Time.fixedDeltaTime);
+
+        rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
+
     }
+
 }
+
