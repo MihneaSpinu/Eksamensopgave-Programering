@@ -38,7 +38,7 @@ public class PlayerInput : MonoBehaviour
     {
         Vector2 mousePos = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue()); // Vi bruger Mouse.current.position.ReadValue() til at få musens position
         GameObject arrow = Instantiate(arrowPrefab, transform.position, Quaternion.identity); // Vi instantierer en pil
-        arrow.GetComponent<Rigidbody2D>().velocity = (mousePos - (Vector2)transform.position).normalized * speed; // Vi giver pilen en velocity
+        arrow.GetComponent<Arrow>().velocity = (mousePos - (Vector2)transform.position).normalized * speed; // Vi giver pilen en velocity
         arrow.transform.Rotate(0, 0, Mathf.Atan2(mousePos.y - transform.position.y, mousePos.x - transform.position.x) * Mathf.Rad2Deg); // Vi roterer pilen
         Destroy(arrow, 2f);
     }
