@@ -6,15 +6,18 @@ using UnityEngine.InputSystem;
 
 public class PlayerInput : MonoBehaviour
 {
-    [SerializeField] private float speed = 5f; // Dette er farten på vores spiller
+    [SerializeField] private float speed = 5f; // Dette er farten på vores arrow
     public GameObject arrowPrefab;
-    public float moveSpeed = 5f;
+   
 
     public Rigidbody2D rb;
+    private float moveSpeed; // Declare the moveSpeed variable
 
     private void Awake() // Awake kører før start, og vi bruger det til at hente Rigidbody2D komponenten
     {
         rb = GetComponent<Rigidbody2D>();
+        moveSpeed = FindAnyObjectByType<PlayerStats>().movementSpeed; // Vi henter movementSpeed fra PlayerStats scriptet
+        
     }
 
     Vector2 movement;

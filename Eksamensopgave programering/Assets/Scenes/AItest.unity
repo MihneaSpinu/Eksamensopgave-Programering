@@ -6307,7 +6307,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 1578840008797419361, guid: 8d19e558329b5824b809c7185b1eb522, type: 3}
   enemyKillCount: 0
-  player: {fileID: 0}
 --- !u!4 &492429577
 Transform:
   m_ObjectHideFlags: 0
