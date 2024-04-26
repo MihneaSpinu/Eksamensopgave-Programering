@@ -8,23 +8,29 @@ public class PlayerInput : MonoBehaviour
 {
     [SerializeField] private float speed = 5f; // Dette er farten på vores arrow
     public GameObject arrowPrefab;
-   
-
+    private float lastShotTime;
+    private float shootCooldown; // Cooldown in seconds
     public Rigidbody2D rb;
     private float moveSpeed; // Declare the moveSpeed variable
+    private PlayerStats playerStats; // Declare the playerStats variable
 
     private void Awake() // Awake kører før start, og vi bruger det til at hente Rigidbody2D komponenten
     {
         rb = GetComponent<Rigidbody2D>();
         moveSpeed = FindAnyObjectByType<PlayerStats>().movementSpeed; // Vi henter movementSpeed fra PlayerStats scriptet
-        
+        shootCooldown = FindAnyObjectByType<PlayerStats>().shootCooldown;
+        playerStats = FindAnyObjectByType<PlayerStats>();
     }
 
     Vector2 movement;
     void Update() // Vi bruger void update til player inputs
     {
+        shootCooldown = playerStats.shootCooldown;
+        moveSpeed = playerStats.movementSpeed;
+        
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
+
 
         if (Input.GetButtonDown("Fire1") && Time.time - lastShotTime > shootCooldown) // Check if enough time has passed since the last shot
         {
