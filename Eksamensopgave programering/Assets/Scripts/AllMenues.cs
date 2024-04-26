@@ -12,12 +12,16 @@ public class TitleScreen : MonoBehaviour
 
     public void StartTutorial()
     {
-        SceneManager.LoadScene("Tutorial");
+        SceneManager.LoadScene("TutorialScreen");
     }
 
     public void Settings()
     {
         SceneManager.LoadScene("Settings");
+    }
+    public void BackToMenu()
+    {
+        SceneManager.LoadScene("StartScreen");
     }
 
     public void QuitGame()
