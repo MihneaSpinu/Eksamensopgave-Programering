@@ -30,7 +30,7 @@ public class Arrow : MonoBehaviour
                 }
                 if (hit.collider.gameObject.tag == "Obstacle")
                 {
-                    Destroy(gameObject);
+                    Destroy(gameObject);    
                 }
             }
         }

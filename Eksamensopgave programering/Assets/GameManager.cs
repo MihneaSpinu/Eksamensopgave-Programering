@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
         //counts the instances of enemys spawned in the scene
         if (GameObject.FindGameObjectsWithTag("Enemy").Length <= 1)
         {
-            // Generate a random position within a radius of 10 units
+            // Generate a random position within a radius of 8 units
             Vector3 spawnPosition = new Vector3(Random.Range(-8, 8), Random.Range(-8, 8), 0);
 
             // Spawns a new enemy at the random position

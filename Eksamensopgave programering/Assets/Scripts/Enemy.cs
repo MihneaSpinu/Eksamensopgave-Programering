@@ -19,9 +19,8 @@ public class Enemy : MonoBehaviour
         agent.updateRotation = false;
         agent.updateUpAxis = false;
     }
-    private void Update()
+    private void FixedUpdate()
     {
         agent.SetDestination(target.position);
     }
 }
-
