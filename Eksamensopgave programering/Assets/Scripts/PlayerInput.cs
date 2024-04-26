@@ -11,6 +11,8 @@ public class PlayerInput : MonoBehaviour
     public float moveSpeed = 5f;
 
     public Rigidbody2D rb;
+    private float lastShotTime;
+    private float shootCooldown = 1.0f; // Cooldown in seconds
 
     private void Awake() // Awake kører før start, og vi bruger det til at hente Rigidbody2D komponenten
     {
@@ -23,9 +25,10 @@ public class PlayerInput : MonoBehaviour
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
 
-        if (Input.GetButtonDown("Fire1")) // Vi bruger GetButtonDown til at se om knappen er blevet trykket ned
+        if (Input.GetButtonDown("Fire1") && Time.time - lastShotTime > shootCooldown) // Check if enough time has passed since the last shot
         {
             Shoot();
+            lastShotTime = Time.time; // Update the last shot time
         }
     }
 

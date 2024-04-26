@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
+
     public void EnemyDied()
     {
         // Increment the enemy kill count
