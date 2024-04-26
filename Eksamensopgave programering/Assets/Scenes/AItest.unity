@@ -6467,11 +6467,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4461391831925287607, guid: 37b05ad286a928644ad8ef5f9de95a4d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.0268197
+      value: -5
       objectReference: {fileID: 0}
     - target: {fileID: 4461391831925287607, guid: 37b05ad286a928644ad8ef5f9de95a4d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.12514591
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4461391831925287607, guid: 37b05ad286a928644ad8ef5f9de95a4d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -6507,7 +6507,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 4461391831925287607, guid: 37b05ad286a928644ad8ef5f9de95a4d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1656880537}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 37b05ad286a928644ad8ef5f9de95a4d, type: 3}
 --- !u!1 &1656880534
@@ -6521,7 +6524,6 @@ GameObject:
   - component: {fileID: 1656880537}
   - component: {fileID: 1656880536}
   - component: {fileID: 1656880535}
-  - component: {fileID: 1656880538}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -6596,39 +6598,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1656880534}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.03, z: -10}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1224148754}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1656880538
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1656880534}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d687537154440a3913a9a3c7977978c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CameraTarget: {fileID: 1224148754}
-  FollowDistance: 30
-  MaxFollowDistance: 100
-  MinFollowDistance: 2
-  ElevationAngle: 0
-  MaxElevationAngle: 90
-  MinElevationAngle: 0
-  OrbitalAngle: 0
-  CameraMode: 0
-  MovementSmoothing: 1
-  RotationSmoothing: 0
-  MovementSmoothingValue: 25
-  RotationSmoothingValue: 5
-  MoveSensitivity: 2
 --- !u!1 &1902240532
 GameObject:
   m_ObjectHideFlags: 0
@@ -6925,7 +6901,6 @@ SceneRoots:
   - {fileID: 398512698}
   - {fileID: 492429577}
   - {fileID: 1902240534}
-  - {fileID: 1656880537}
   - {fileID: 1968451525}
   - {fileID: 606796559}
   - {fileID: 1308677016}
