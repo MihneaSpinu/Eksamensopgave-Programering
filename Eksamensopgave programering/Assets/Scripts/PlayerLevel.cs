@@ -24,7 +24,7 @@ public class PlayerLevel : MonoBehaviour
     {
         level++; // Increment the level
         experience -= experienceToNextLevel; // Reset the experience
-        experienceToNextLevel = (int)(experienceToNextLevel * 1.1f); // Increase the experience needed for the next level
+        experienceToNextLevel = (int)(experienceToNextLevel * 1.2f); // Increase the experience needed for the next level
     }
 
     // Update is called once per frame

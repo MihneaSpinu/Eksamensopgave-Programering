@@ -23,11 +23,12 @@ public class Arrow : MonoBehaviour
                 Debug.Log(hit.collider.gameObject.name);
                 if (hit.collider.gameObject.tag == "Enemy")
                 {
-                    // Destroy the enemy
-                    Destroy(hit.collider.gameObject);
-                    // Notify the game manager that the enemy died
-                    FindObjectOfType<GameManager>().EnemyDied();
+                    // Create an instance of the Enemy class
+                    Enemy enemy = hit.collider.gameObject.GetComponent<Enemy>();
+                    // Call the TakeDamage method on the enemy instance
+                    enemy.TakeDamage(archer.GetComponent<PlayerStats>().damage);
                 }
+
                 if (hit.collider.gameObject.tag == "Obstacle")
                 {
                     Destroy(gameObject);    
