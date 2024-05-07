@@ -21,5 +21,11 @@ public class GameManager : MonoBehaviour
     {
         // Increment the enemy kill count
         enemyKillCount++;
+
+        // Declare and initialize the playerLevel variable
+        PlayerLevel playerLevel = FindObjectOfType<PlayerLevel>();
+
+        // Gain experience for killing an enemy
+        playerLevel.GainExperience(100); // assuming 100 is the experience gained per kill
     }
 }
