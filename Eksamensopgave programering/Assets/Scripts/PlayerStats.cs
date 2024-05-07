@@ -24,6 +24,16 @@ public class PlayerStats : MonoBehaviour
         shootCooldown -= 0.5f; // Decrease the shoot cooldown
     }
 
+    public void TakeDamage(int damage) // Take damage
+    {
+        health -= damage; // Decrease the health
+        if (health <= 0) // If the health is less than or equal to 0
+        {
+            // Destroy the player
+            Destroy(gameObject);
+        }
+    }
+
     void Update() 
     {
         if (Keyboard.current.gKey.wasPressedThisFrame) // Just for testing purposes
