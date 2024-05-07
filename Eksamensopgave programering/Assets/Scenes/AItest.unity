@@ -7042,6 +7042,14 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 53210223934694323, guid: 37b05ad286a928644ad8ef5f9de95a4d, type: 3}
+      propertyPath: m_Size.y
+      value: 0.73
+      objectReference: {fileID: 0}
+    - target: {fileID: 53210223934694323, guid: 37b05ad286a928644ad8ef5f9de95a4d, type: 3}
+      propertyPath: m_Offset.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 53210223934694323, guid: 37b05ad286a928644ad8ef5f9de95a4d, type: 3}
       propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
@@ -7708,6 +7716,7 @@ GameObject:
   - component: {fileID: 1992257133}
   - component: {fileID: 1992257132}
   - component: {fileID: 1992257134}
+  - component: {fileID: 1992257135}
   m_Layer: 0
   m_Name: Tilemap_Bushes
   m_TagString: Untagged
@@ -7929,6 +7938,18 @@ TilemapCollider2D:
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
   m_UseDelaunayMesh: 0
+--- !u!114 &1992257135
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1992257130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40507ffd85eef9143bc49d4e834a5e98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
