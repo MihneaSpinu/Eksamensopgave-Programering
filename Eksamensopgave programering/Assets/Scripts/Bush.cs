@@ -4,33 +4,25 @@ using UnityEngine;
 
 public class Bush : MonoBehaviour
 {
-    private bool SlowPlayer = false;
-
-    void OnTriggerEnter2D(Collider2D other)
+        void OnTriggerEnter2D(Collider2D other) // This function is called when the collider/rigidbody has begun touching another rigidbody/collider
     {
-        if (other.gameObject.tag == "Archer")
+        Debug.Log("Collision Detected");
+        if (other.GetComponent<Collider2D>().gameObject.tag == "Player") // If the object that collided with the bush has the tag "Player"
         {
-            SlowPlayer = true;
+            PlayerStats playerStats = other.GetComponent<PlayerStats>();
+            playerStats.movementSpeed /= 2; // Slow the player down
             Debug.Log("Player Slowed");
         }
     }
 
-    void OnTriggerExit2D(Collider2D other)
+    void OnTriggerExit2D(Collider2D other) // This function is called when the collider/rigidbody has stopped touching another rigidbody/collider
     {
-        if (other.gameObject.tag == "Archer")
+        Debug.Log("Collision Ended");
+        if (other.GetComponent<Collider2D>().gameObject.tag == "Player") // If the object that collided with the bush has the tag "Player"
         {
-            SlowPlayer = false;
+            PlayerStats playerStats = other.GetComponent<PlayerStats>();
+            playerStats.movementSpeed *= 2; // Restore the player's speed
+            Debug.Log("Player Speed Restored");
         }
-    }
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
