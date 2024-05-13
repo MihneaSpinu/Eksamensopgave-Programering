@@ -14,7 +14,7 @@ public class PlayerStats : MonoBehaviour
     public int maxHealth = 100;
     public int level = 0; 
 
-    public void LevelUp() // Level up the player
+    public void StatsUp() // Level up the player
     {
         level++; // Increment the level
         maxHealth += 10; // Increase the max health
@@ -31,14 +31,6 @@ public class PlayerStats : MonoBehaviour
         {
             // Destroy the player
             Destroy(gameObject);
-        }
-    }
-
-    void Update() 
-    {
-        if (Keyboard.current.gKey.wasPressedThisFrame) // Just for testing purposes
-        {
-            health -= 50;
         }
     }
 }

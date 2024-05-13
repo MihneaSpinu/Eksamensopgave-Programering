@@ -16,7 +16,7 @@ public class PlayerLevel : MonoBehaviour
         if (experience >= experienceToNextLevel)
         {
             LevelUp(); // Local level up function
-            GameObject.FindObjectOfType<PlayerStats>().LevelUp(); // PlayerStats level up function
+            GameObject.FindObjectOfType<PlayerStats>().StatsUp(); // PlayerStats StatsUp function
         }
     }
 
