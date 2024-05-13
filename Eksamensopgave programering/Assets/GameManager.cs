@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         //counts the instances of enemys spawned in the scene
-        if (GameObject.FindGameObjectsWithTag("Enemy").Length <= 1)
+        if (GameObject.FindGameObjectsWithTag("Enemy").Length <= 20)
         {
             //spawns a new enemy
             GameObject.FindObjectOfType<EnemySpawner>().spawnEnemy();
