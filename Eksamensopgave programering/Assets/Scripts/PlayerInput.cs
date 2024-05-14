@@ -15,8 +15,6 @@ public class PlayerInput : MonoBehaviour
     private float moveSpeed; // Declare the moveSpeed variable
     private PlayerStats playerStats; // Declare the playerStats variable
     private Animator animator;
-    
-    
 
     private void Awake() // Awake kører før start, og vi bruger det til at hente Rigidbody2D komponenten
     {
@@ -26,9 +24,8 @@ public class PlayerInput : MonoBehaviour
         moveSpeed = playerStats.movementSpeed;
         animator = GetComponent<Animator>();
     }
-Vector2 movement;
 
-    
+    Vector2 movement;
     void Update() // Vi bruger void update til player inputs
     {
         shootCooldown = playerStats.shootCooldown; // Update the shoot cooldown
@@ -36,13 +33,16 @@ Vector2 movement;
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
 
-    if (movement.x !=0 || movement.y !=0){
-        animator.SetFloat("X", movement.x);
-        animator.SetFloat("Y", movement.y);
-        animator.SetBool("IsWalking", true);
-    } else {
-        animator.SetBool("IsWalking", false);
-}
+        if (movement.x != 0 || movement.y != 0)
+        {
+            animator.SetFloat("X", movement.x);
+            animator.SetFloat("Y", movement.y);
+            animator.SetBool("IsWalking", true);
+        }
+        else
+        {
+            animator.SetBool("IsWalking", false);
+        }
         if (Input.GetButton("Fire1") && Time.time - lastShotTime > shootCooldown) // Check if enough time has passed since the last shot
         {
             Shoot();
