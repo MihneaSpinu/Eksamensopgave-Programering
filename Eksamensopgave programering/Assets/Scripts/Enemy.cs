@@ -7,13 +7,8 @@ using UnityEngine.InputSystem;
 public class Enemy : MonoBehaviour
 {
 
-    // Declare the player stats
-    public int health = 100;
-    public float movementSpeed = 5f;
-    public float shootCooldown;
-    public int damage = 10;
-    public int maxHealth = 100;
-
+    public int health = 100; // Declare the health of the enemy
+    public int damage = 10; // Declare the damage of the enemy
     [SerializeField] Transform target;
     NavMeshAgent agent;
     private void Awake()
@@ -53,17 +48,5 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    private void OnTriggerCollision2D(Collision collision)
-    {
-        Debug.Log("collision");
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            Debug.Log("collision2");
-            collision.gameObject.GetComponent<PlayerStats>().TakeDamage(damage);
-            Debug.Log("collision3");          
-
-        }
-    }
 }
-
-
+ 

@@ -12,7 +12,7 @@ public class PlayerStats : MonoBehaviour
     public float shootCooldown;
     public int damage = 10;
     public int maxHealth = 100;
-    public int level = 0; 
+    public int level = 0;
 
     public void LevelUp() // Level up the player
     {
@@ -34,11 +34,12 @@ public class PlayerStats : MonoBehaviour
         }
     }
 
-    void Update() 
+
+    void OnTriggerEnter2D(Collider2D collider)
     {
-        if (Keyboard.current.gKey.wasPressedThisFrame) // Just for testing purposes
+        if (collider.gameObject.CompareTag("Enemy"))
         {
-            health -= 50;
+                health -= 10;
         }
     }
 }
