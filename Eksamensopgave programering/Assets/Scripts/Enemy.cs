@@ -53,12 +53,17 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerCollision2D(Collision collision)
     {
-        // Damage any object that collides with the enemy
-        collision.gameObject.SendMessage("TakeDamage", damage);
-    }
+        Debug.Log("collision");
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            Debug.Log("collision2");
+            collision.gameObject.GetComponent<PlayerStats>().TakeDamage(damage);
+            Debug.Log("collision3");          
 
+        }
+    }
 }
 
 

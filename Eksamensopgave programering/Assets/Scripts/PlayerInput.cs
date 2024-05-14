@@ -54,4 +54,8 @@ public class PlayerInput : MonoBehaviour
         arrow.transform.Rotate(0, 0, Mathf.Atan2(mousePos.y - transform.position.y, mousePos.x - transform.position.x) * Mathf.Rad2Deg); // Vi roterer pilen
         Destroy(arrow, 2f); // Vi sletter pilen efter 2 sekunder
     }
+
+    private void OnTriggerEnter2D(Collider2D collider) {
+        Debug.Log("Trigger!");
+    }
 }
