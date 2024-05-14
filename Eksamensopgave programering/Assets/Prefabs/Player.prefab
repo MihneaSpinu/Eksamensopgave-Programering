@@ -174,7 +174,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 50
   arrowPrefab: {fileID: 6948263675123218033, guid: fe75d09a3d8e1c64b99887692093400a, type: 3}
-  moveSpeed: 5
   rb: {fileID: 0}
 --- !u!95 &3730296595543873357
 Animator:

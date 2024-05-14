@@ -4,19 +4,25 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public GameObject enemyPrefab;
     public int enemyKillCount = 0;
-    // Update is called once per frame
+    public float delay = 50f;
+
     void Update()
     {
         //counts the instances of enemys spawned in the scene
-        if (GameObject.FindGameObjectsWithTag("Enemy").Length <= 1)
+        if (GameObject.FindGameObjectsWithTag("Enemy").Length <= 10)
         {
-            // Generate a random position within a radius of 10 units
-            Vector3 spawnPosition = new Vector3(Random.Range(-8, 8), Random.Range(-8, 8), 0);
+            //spawns a new enemy
+            GameObject.FindObjectOfType<EnemySpawner>().spawnEnemy();
+            // Wait for the specified delay before spawning a new enemy
+            StartCoroutine(SpawnEnemyWithDelay(delay));
 
-            // Spawns a new enemy at the random position
-            GameObject enemy = Instantiate(enemyPrefab, spawnPosition, Quaternion.identity);
+            IEnumerator SpawnEnemyWithDelay(float delay)
+            {
+                yield return new WaitForSeconds(delay);
+                GameObject.FindObjectOfType<EnemySpawner>().spawnEnemy();
+            }
+
         }
     }
 
