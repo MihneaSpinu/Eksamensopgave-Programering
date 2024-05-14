@@ -22,19 +22,7 @@ public class PlayerStats : MonoBehaviour
 
     public TextMeshProUGUI levelText;
     public TextMeshProUGUI upgradePointsText;
-
-
-    void Start()
-    {
-        UpdateUI();
-    }
-
-    void UpdateUI()
-    {
-        levelText.text = "Level: " + level.ToString();
-        upgradePointsText.text = "Upgrade Points: " + upgradePoints.ToString();
-    }
-
+    public TextMeshProUGUI experienceText;
 
     public void Update()
     {
@@ -43,10 +31,10 @@ public class PlayerStats : MonoBehaviour
             Debug.Log("Level up!");
             LevelUp();
         }
-        if (Input.GetKeyDown(KeyCode.L) & upgradePoints > 0) // Check if the player pressed the space key
-        {
-            GameObject.FindObjectOfType<PlayerStats>().Upgrade(); // PlayerStats StatsUp function
-        }
+
+        levelText.text = "Level: " + level.ToString();
+        upgradePointsText.text = "Upgrade Points: " + upgradePoints.ToString();
+        experienceText.text = "Experience: " + experience.ToString() + "/" + experienceToNextLevel.ToString();
     }
 
     public void LevelUp()
@@ -56,22 +44,5 @@ public class PlayerStats : MonoBehaviour
         experienceToNextLevel = (int)(experienceToNextLevel * 1.2f); // Increase the experience needed for the next level
 
         upgradePoints++;
-        UpdateUI();
-    }
-
-    public void Upgrade()
-    {
-        if (upgradePoints > 0)
-        {
-            // Implement your upgrade functionality here
-            Debug.Log("Upgrade applied!");
-
-            upgradePoints--;
-            UpdateUI();
-        }
-        else
-        {
-            Debug.Log("Not enough upgrade points!");
-        }
     }
 }

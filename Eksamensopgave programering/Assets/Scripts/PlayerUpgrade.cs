@@ -7,39 +7,38 @@ public class PlayerUpgrade : MonoBehaviour
 {
     public void UpgradeHealth()
     {
-        PlayerStats playerStats = FindAnyObjectByType<PlayerStats>();
-        playerStats.maxHealth += 10;
-        playerStats.health = playerStats.maxHealth;
-    }
-
-    public void UpgradeDamage()
-    {
-        PlayerStats playerStats = FindAnyObjectByType<PlayerStats>();
-        playerStats.damage += 5;
+        if (FindObjectOfType<PlayerStats>().upgradePoints > 0)
+        {
+            FindObjectOfType<PlayerStats>().upgradePoints--;
+            FindObjectOfType<PlayerStats>().maxHealth += 10;
+            FindObjectOfType<PlayerStats>().health = FindObjectOfType<PlayerStats>().maxHealth;
+        }
     }
 
     public void UpgradeSpeed()
     {
-        PlayerStats playerStats = FindAnyObjectByType<PlayerStats>();
-        playerStats.movementSpeed += 1;
+        if (FindObjectOfType<PlayerStats>().upgradePoints > 0)
+        {
+            FindObjectOfType<PlayerStats>().upgradePoints--;
+            FindObjectOfType<PlayerStats>().movementSpeed += 1;
+        }
     }
 
     public void UpgradeCooldown()
     {
-        PlayerStats playerStats = FindAnyObjectByType<PlayerStats>();
-        playerStats.shootCooldown -= 0.5f;
+        if (FindObjectOfType<PlayerStats>().upgradePoints > 0)
+        {
+            FindObjectOfType<PlayerStats>().upgradePoints--;
+            FindObjectOfType<PlayerStats>().shootCooldown -= 0.5f;
+        }
     }
 
-    public void UpgradeAll()
+    public void UpgradeDamage()
     {
-        UpgradeHealth();
-        UpgradeDamage();
-        UpgradeSpeed();
-    //    UpgradeCooldown();
-
-    GameObject.FindObjectOfType<PlayerStats>().LevelUp(); // PlayerStats StatsUp function
-
-    }    
-
-
+        if (FindObjectOfType<PlayerStats>().upgradePoints > 0)
+        {
+            FindObjectOfType<PlayerStats>().upgradePoints--;
+            FindObjectOfType<PlayerStats>().damage += 5;
+        }
+    }
 }

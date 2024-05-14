@@ -36,14 +36,6 @@ public class PlayerInput : MonoBehaviour
             Shoot();
             lastShotTime = Time.time; // Update the last shot time
         }
-
-
-        if (Input.GetKeyDown(KeyCode.K)) // Check if the player pressed the space key
-        {
-            GameObject.FindObjectOfType<PlayerUpgrade>().UpgradeAll(); // PlayerStats StatsUp function
-        }
-
-
     }
 
     void FixedUpdate() // Vi bruger fixed update til player movement da en normal update varierer pr. frametime, og FixedUpdate ikke gør
