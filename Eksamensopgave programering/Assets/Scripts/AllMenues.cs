@@ -7,7 +7,7 @@ public class TitleScreen : MonoBehaviour
 {
     public void StartGame()
     {
-        SceneManager.LoadScene("AItest");
+        SceneManager.LoadScene("World 1");
     }
 
     public void StartTutorial()

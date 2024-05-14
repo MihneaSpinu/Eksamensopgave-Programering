@@ -6,12 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/AItest.unity
-    guid: 5db610d74664a0841b68f8e11c6d2ab9
-  - enabled: 0
-    path: Assets/Scenes/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 1
     path: Assets/Scenes/TutorialScreen.unity
     guid: 9a80d68d566d1af4eb9815661350a804
   - enabled: 1
@@ -23,5 +17,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/DeadScreen.unity
     guid: ec724396d6523004cb4b0f1845807898
+  - enabled: 1
+    path: Assets/Scenes/World 1.unity
+    guid: d95d9a762da3a7d4baf41162d0726972
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: bf789a2d7ce979143a31d696e8ab375b, type: 2}

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Bush : MonoBehaviour
 {
-        void OnTriggerEnter2D(Collider2D other) // This function is called when the collider/rigidbody has begun touching another rigidbody/collider
+    void OnTriggerEnter2D(Collider2D other) // This function is called when the collider/rigidbody has begun touching another rigidbody/collider
     {
         Debug.Log("Collision Detected");
         if (other.GetComponent<Collider2D>().gameObject.tag == "Player") // If the object that collided with the bush has the tag "Player"

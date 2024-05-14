@@ -72,4 +72,9 @@ public class PlayerInput : MonoBehaviour
         // Vi sletter pilen efter 2 sekunder
         Destroy(arrow, 2f);
     }
+
+    private void OnTriggerEnter2D(Collider2D collider)
+    {
+        Debug.Log("Trigger!");
+    }
 }

@@ -6,6 +6,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class PlayerStats : MonoBehaviour
 {
@@ -44,5 +45,17 @@ public class PlayerStats : MonoBehaviour
         experienceToNextLevel = (int)(experienceToNextLevel * 1.2f); // Increase the experience needed for the next level
 
         upgradePoints++;
+    }
+
+    void OnTriggerEnter2D(Collider2D collider)
+    {
+        if (collider.gameObject.CompareTag("Enemy"))
+        {
+            health -= 10;
+            if (health <= 0)
+            {
+                SceneManager.LoadScene("DeadScreen");
+            }
+        }
     }
 }
