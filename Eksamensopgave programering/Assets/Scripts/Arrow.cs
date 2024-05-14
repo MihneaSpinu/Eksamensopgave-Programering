@@ -23,15 +23,18 @@ public class Arrow : MonoBehaviour
                 Debug.Log(hit.collider.gameObject.name);
                 if (hit.collider.gameObject.tag == "Enemy")
                 {
+                    Debug.Log("Hit an enemy!");
                     // Create an instance of the Enemy class
                     Enemy enemy = hit.collider.gameObject.GetComponent<Enemy>();
                     // Call the TakeDamage method on the enemy instance
                     enemy.TakeDamage(archer.GetComponent<PlayerStats>().damage);
+                    // Destroy the arrow
+                    Destroy(gameObject);
                 }
 
                 if (hit.collider.gameObject.tag == "Obstacle")
                 {
-                    Destroy(gameObject);    
+                    Destroy(gameObject);
                 }
             }
         }
