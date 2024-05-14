@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Collections;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -13,6 +14,9 @@ public class PlayerInput : MonoBehaviour
     public Rigidbody2D rb;
     private float moveSpeed; // Declare the moveSpeed variable
     private PlayerStats playerStats; // Declare the playerStats variable
+    private Animator animator;
+    
+    
 
     private void Awake() // Awake kører før start, og vi bruger det til at hente Rigidbody2D komponenten
     {
@@ -20,17 +24,30 @@ public class PlayerInput : MonoBehaviour
         moveSpeed = FindAnyObjectByType<PlayerStats>().movementSpeed; // Vi henter movementSpeed fra PlayerStats scriptet
         shootCooldown = FindAnyObjectByType<PlayerStats>().shootCooldown;
         playerStats = FindAnyObjectByType<PlayerStats>();
+        animator = GetComponent<Animator>();
     }
+Vector2 movement;
 
-    Vector2 movement;
+    
     void Update() // Vi bruger void update til player inputs
     {
         shootCooldown = playerStats.shootCooldown;
         moveSpeed = playerStats.movementSpeed;
-        
+    
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
 
+    
+
+    if (movement.x !=0 || movement.y !=0){
+        animator.SetFloat("X", movement.x);
+        animator.SetFloat("Y", movement.y);
+
+        animator.SetBool("IsWalking", true);
+    } else {
+        animator.SetBool("IsWalking", false);
+    
+}
 
         if (Input.GetButtonDown("Fire1") && Time.time - lastShotTime > shootCooldown) // Check if enough time has passed since the last shot
         {
