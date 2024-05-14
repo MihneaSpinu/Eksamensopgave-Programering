@@ -22,9 +22,12 @@ public class PlayerInput : MonoBehaviour
         moveSpeed = playerStats.movementSpeed;
     }
 
-    Vector2 movement; 
+    Vector2 movement;
     void Update() // Vi bruger void update til player inputs
     {
+        shootCooldown = playerStats.shootCooldown; // Update the shoot cooldown
+        moveSpeed = playerStats.movementSpeed; // Update the move speed
+
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
 

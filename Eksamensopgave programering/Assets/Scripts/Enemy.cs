@@ -34,6 +34,11 @@ public class Enemy : MonoBehaviour
         {
             // Notify the game manager that the enemy died
             FindObjectOfType<GameManager>().EnemyDied();
+
+            // Notify the player stats that the player gained experience
+            PlayerStats playerStats = FindAnyObjectByType<PlayerStats>();
+            playerStats.experience += 10;
+
             // Destroy the Enemy
             Destroy(gameObject);
         }

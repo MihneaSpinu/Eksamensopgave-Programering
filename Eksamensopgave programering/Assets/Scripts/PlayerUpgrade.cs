@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerUpgrade : MonoBehaviour
@@ -34,7 +35,11 @@ public class PlayerUpgrade : MonoBehaviour
         UpgradeHealth();
         UpgradeDamage();
         UpgradeSpeed();
-        UpgradeCooldown();
-    }
-    
+    //    UpgradeCooldown();
+
+    GameObject.FindObjectOfType<PlayerStats>().LevelUp(); // PlayerStats StatsUp function
+
+    }    
+
+
 }
