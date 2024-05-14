@@ -360,7 +360,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   arrowPrefab: {fileID: 0}
-  moveSpeed: 5
   rb: {fileID: 0}
 --- !u!50 &724591765
 Rigidbody2D:

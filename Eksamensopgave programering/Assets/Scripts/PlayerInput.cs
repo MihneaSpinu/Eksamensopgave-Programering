@@ -73,7 +73,8 @@ public class PlayerInput : MonoBehaviour
         Destroy(arrow, 2f);
     }
 
-    private void OnTriggerEnter2D(Collider2D collider) {
+    private void OnTriggerEnter2D(Collider2D collider)
+    {
         Debug.Log("Trigger!");
     }
 }

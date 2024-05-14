@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-
     public int enemyKillCount = 0;
     public float delay = 50f;
 
@@ -23,7 +22,7 @@ public class GameManager : MonoBehaviour
                 yield return new WaitForSeconds(delay);
                 GameObject.FindObjectOfType<EnemySpawner>().spawnEnemy();
             }
-           
+
         }
     }
 

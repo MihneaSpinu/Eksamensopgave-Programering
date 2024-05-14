@@ -6,7 +6,6 @@ using UnityEngine.AI;
 public class Enemy : MonoBehaviour
 {
     [SerializeField] int enemyHealth = 100; // Health of the enemy
-
     public int health = 100; // Declare the health of the enemy
     public int damage = 10; // Declare the damage of the enemy
     [SerializeField] Transform target;
@@ -45,6 +44,4 @@ public class Enemy : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
 }
- 
