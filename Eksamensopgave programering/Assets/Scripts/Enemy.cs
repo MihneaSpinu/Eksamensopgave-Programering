@@ -1,20 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
-using UnityEngine.InputSystem;
+
 public class Enemy : MonoBehaviour
 {
+    [SerializeField] int enemyHealth = 100; // Health of the enemy
 
     public int health = 100; // Declare the health of the enemy
     public int damage = 10; // Declare the damage of the enemy
     [SerializeField] Transform target;
     NavMeshAgent agent;
+
     private void Awake()
     {
         target = GameObject.FindGameObjectWithTag("Player").transform;
-
     }
 
     private void Start()
@@ -23,26 +23,24 @@ public class Enemy : MonoBehaviour
         agent.updateRotation = false;
         agent.updateUpAxis = false;
     }
+
     private void FixedUpdate()
     {
         agent.SetDestination(target.position);
     }
 
-    void Update()
-    {
-        if (Keyboard.current.gKey.wasPressedThisFrame) // Just for testing purposes
-        {
-            health -= 50;
-        }
-    }
-
     public void TakeDamage(int damage) // Take damage
     {
-        health -= damage; // Decrease the health
-        if (health <= 0) // If the health is less than or equal to 0
+        enemyHealth -= damage; // Decrease the health
+        if (enemyHealth <= 0) // If the health is less than or equal to 0
         {
             // Notify the game manager that the enemy died
             FindObjectOfType<GameManager>().EnemyDied();
+
+            // Notify the player stats that the player gained experience
+            PlayerStats playerStats = FindAnyObjectByType<PlayerStats>();
+            playerStats.experience += 10;
+
             // Destroy the Enemy
             Destroy(gameObject);
         }

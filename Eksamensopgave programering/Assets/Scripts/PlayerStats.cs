@@ -1,8 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Collections.LowLevel.Unsafe;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
+using TMPro;
 
 public class PlayerStats : MonoBehaviour
 {
@@ -13,30 +16,35 @@ public class PlayerStats : MonoBehaviour
     public int damage = 10;
     public int maxHealth = 100;
     public int level = 0;
+    public int experience = 0;
+    public int experienceToNextLevel = 100;
+    public int upgradePoints = 0;
 
-    public void LevelUp() // Level up the player
-    {
-        level++; // Increment the level
-        maxHealth += 10; // Increase the max health
-        health = maxHealth; // Reset the health
-        movementSpeed += 1; // Increase the movement speed
-        damage += 5; // Increase the damage
-        shootCooldown -= 0.5f; // Decrease the shoot cooldown
-    }
+    public TextMeshProUGUI levelText;
+    public TextMeshProUGUI upgradePointsText;
+    public TextMeshProUGUI experienceText;
 
-    public void TakeDamage(int damage) // Take damage
+    public void Update()
     {
-        health -= damage; // Decrease the health
-        if (health <= 0) // If the health is less than or equal to 0
+        if (experience >= experienceToNextLevel)
         {
-            // Destroy the player
-            Destroy(gameObject);
+            Debug.Log("Level up!");
+            LevelUp();
         }
+
+        levelText.text = "Level: " + level.ToString();
+        upgradePointsText.text = "Upgrade Points: " + upgradePoints.ToString();
+        experienceText.text = "Experience: " + experience.ToString() + "/" + experienceToNextLevel.ToString();
     }
 
-
+    public void LevelUp()
     void OnTriggerEnter2D(Collider2D collider)
     {
+        level++;
+        experience = 0; // Reset the experience
+        experienceToNextLevel = (int)(experienceToNextLevel * 1.2f); // Increase the experience needed for the next level
+
+        upgradePoints++;
         if (collider.gameObject.CompareTag("Enemy"))
         {
                 health -= 10;
