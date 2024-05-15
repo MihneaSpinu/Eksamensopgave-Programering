@@ -2,6 +2,7 @@
 Hansenberg Tekniske Gymnasium
 
 Gruppe 1: Casper B, Mihnea og Samuel.
+
 ## Projektbeskrivelse
 Vi valgt lave et nyt spil til vores eksamensprojekt. Dette er fordi vi synes at det game var for kompliceret, og at starte på et nyt ville give os bedre struktur på arbejdet og gøre det nemmere at videreudvikle. Det nye spil vil være en form for RPG, inspireret af andre titler så som Diablo, Realm of the mad god Exalt, etc. 
 
@@ -41,6 +42,9 @@ Spilleren bevæger sig rundt på et fixed map som vi selv laver, hvor der er pla
 ## Video af spillet
 
 [![Link til video](https://img.youtube.com/vi/<SEN11G7ZiMU>/0.jpg)](https://youtu.be/SEN11G7ZiMU)
+
+## Link til spillet
+https://play.unity.com/mg/other/webgl-builds-396758
 
 ## Flowchart af vores spil
 
