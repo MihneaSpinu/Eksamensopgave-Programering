@@ -40,7 +40,7 @@ Spilleren bevæger sig rundt på et fixed map som vi selv laver, hvor der er pla
 
 ## Video af spillet
 
-<video controls src="Cryptic Conquest 2D Demo video_1.mp4"></video>
+[![alt text](https://img.youtube.com/vi/<SEN11G7ZiMU>/0.jpg)](https://youtu.be/SEN11G7ZiMU)
 
 ## Flowchart af vores spil
 
