@@ -1,12 +1,47 @@
-# Eksamensopgave-Programering 3.G 2024
-## Gruppe 6: Casper B, Mihnea og Samuel.
+# Eksamensopgave - Programering B - 2024
+Hansenberg Tekniske Gymnasium
 
-Vi valgt lave et nyt spil til vores eksamensprojekt. Dette er fordi vi synes at det game var for kompliceret, og at starte på et nyt ville give os bedre struktur på arbejdet og gøre det nemmere at videreudvikle. 
+Gruppe 1: Casper B, Mihnea og Samuel.
+## Projektbeskrivelse
+Vi valgt lave et nyt spil til vores eksamensprojekt. Dette er fordi vi synes at det game var for kompliceret, og at starte på et nyt ville give os bedre struktur på arbejdet og gøre det nemmere at videreudvikle. Det nye spil vil være en form for RPG, inspireret af andre titler så som Diablo, Realm of the mad god Exalt, etc. 
 
-Vi vil lave genneralle assets til vores spil. Det er animationer til Player, men ingen funktionaliteter. Vi vil også lave et Map til vores spil.
+Før opgaven startede, har vi lavet genneralle assets til vores spil. Vi har lavet animationer til Player, men ingen funktionaliteter. Vi har også lavet et Tile set til vores spil, og et lille test map. 
 
-Vi har opstillet en player som kan bevæge. Vi bruger `void Update()`til at fange brugeren input. For at fange brugerens input bruger vi         `movement.x = Input.GetAxisRaw("Horizontal");` og `movement.y = Input.GetAxisRaw("Vertical");`, som går ind i Unity Input Manager, og finder tasten som vi har valgt. 
-Vi har fundet en sprite pack, som vi har brugt til at lave animationer til vores player. Vi har fundet et tileset, som vi har brugt til at lave et tilemap, så vi har en start.
+Målet er at lave et singleplayer spil med en main player. Spillerens mål er at dræbe monstre, level up, blive stærkere og øge sin score. 
+Spilleren bevæger sig rundt på et fixed map som vi selv laver, hvor der er plads til at lave forskellige forhindringer.
+## Det vi har nået
 
-Som en øvelse har vi lavet et diagram over vores tidligere spil ”Cryptic Conquest":
-<img src="Opgave%202.1-1.jpg" width="75%">
+
+|     Funktion    |     Navn                        |     Beskrivelse                                                                                            |     Person              |
+|-----------------|---------------------------------|------------------------------------------------------------------------------------------------------------|-------------------------|
+|     F1          |     Player                      |     Karakteren som spilleren bruger                                                                        |                         |
+|     F1.1        |     Animationer til movement    |     Animationer som spiller når man bevæger sig (Casper lavede- og Samuel   implementerede animationer)    |     Casper og Samuel    |
+|     F1.2        |     Health                      |     Spillerens liv                                                                                         |     Casper              |
+|     F1.3        |     Attack                      |     Player skyder, hvor spiller kliker                                                                     |     Mihnea              |
+|     F1.4        |     Stats                       |     Øge health, damage eller andet                                                                         |     Mihnea              |
+
+
+|     F.2       |     Enemy            |     Fjenden som spilleren skal bekæmpe               |               |
+|---------------|----------------------|------------------------------------------------------|---------------|
+|     F2.1      |     Spawn            |     Enemy spawns fra spawner                         |     Casper    |
+|     F2.2.2    |     Taking damage    |     Enemy modtager damage                            |     Mihnea    |
+|     F2.3      |     Tracking         |     Enemy følger efter player                        |     Mihnea    |
+|     F2.4      |     Enemy Health     |     Enemy health                                     |     Casper    |
+|     F2.5      |     Enemy Attack     |     Enemy attack, basisk on-contact   deal damage    |     Casper    |
+
+|     F3      |     UI               |     Alt spillets interface                                                               |               |
+|-------------|----------------------|------------------------------------------------------------------------------------------|---------------|
+|     F3.1    |     HP bar           |     Viser HP man har                                                                     |     Mihnea    |
+|     F3.2    |     Kills            |     Enemy kills                                                                          |     Mihnea    |
+|     F3.3    |     Main Menu        |     Main menu viser tutorial, settings og start game                                     |     Samuel    |
+|     F3.4    |     Dead Menu        |     Menu efter du dør, her kan du vælge main menu eller respawn                          |     Samuel    |
+|     F3.5    |     Tutorial         |     Tutorial screen som forklarer spillets keybinds og funktioner                        |     Samuel    |
+|     F3.6    |     Stats Upgrade    |     Stats menu til player, herunder mulig upgrade (dmg, health, speed   upgrade etc.)    |     Mihnea    |
+
+## Video af spillet
+
+<video controls src="Cryptic Conquest 2D Demo video_1.mp4" title="Title"></video>
+
+## Flowchart af vores spil
+
+![alt text](Diagram-1.png)
